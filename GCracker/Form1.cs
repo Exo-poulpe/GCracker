@@ -43,7 +43,6 @@ namespace GCracker
             this.tbxArchivePath.DoubleClick += OpenExplorer;
             this.btnSettings.Click += NewUI;
             this.FormClosing += AppQuit;
-
         }
 
         public void SetTextSettings()
@@ -58,8 +57,7 @@ namespace GCracker
             {
                 T.Abort();
                 T1.Abort();
-                this.Close();
-
+                Application.Exit();
             }
         }
 
@@ -91,10 +89,32 @@ namespace GCracker
         public void StopAttack(object sender, EventArgs e)
         {
             T.Abort();
+            T1.Abort();
             if (T.IsAlive)
             {
                 T.Join();
             }
+            BruteForce.Stop();
+            ResetLabelPassword();
+            LogAction("Stop " + cmbType.Items[cmbType.SelectedIndex].ToString() + " attack alphabet number : " + ((chkBoxAlpha1.Checked) ? "1" : (chkBoxAlpha2.Checked) ? "2" : (chkBoxAlpha3.Checked) ? "3" : "3"));
+        }
+
+        public void ResetLabelPassword()
+        {
+            lblPasswordCurrent.Invoke(new MethodInvoker(() =>
+            {
+                lblPasswordCurrent.Text = DEFAULT_STRING_PASSWORD_CURRENT;
+            }));
+
+            lblPasswordSpeed.Invoke(new MethodInvoker(() =>
+            {
+                lblPasswordSpeed.Text = DEFAULT_STRING_PASSWORD_COUNT ;
+            }));
+
+            lblPasswordNumber.Invoke(new MethodInvoker(() =>
+            {
+                lblPasswordNumber.Text = DEFAULT_STRING_PASSWORD_NUMBER ;
+            }));
         }
 
         public void UpdateLabelPassword(string passwordCurrent, string passwordCount, string passwordNumber)
@@ -128,6 +148,7 @@ namespace GCracker
         public void ComboBoxIndex(object sender, EventArgs e)
         {
             this.btnStart.Enabled = false;
+            this.btnStop.Enabled = false;
             this.cmbType.SelectedIndex = 0;
         }
 
@@ -144,6 +165,7 @@ namespace GCracker
             }
 
             this.btnStart.Enabled = true;
+            this.btnStop.Enabled = true;
         }
 
         public void ExtractArchive(object sender, EventArgs e)
@@ -154,13 +176,13 @@ namespace GCracker
             BruteForce bf = new BruteForce(this,(chkBoxAlpha1.Checked)?1:(chkBoxAlpha2.Checked)?2:(chkBoxAlpha3.Checked)?3:3);
             T = new Thread(new ThreadStart(() => { Password = bf.ArchiveBruteForce(archive); End = DateTime.Now; T.Abort(); }));
             T.Start();
-            LogAction();
+            LogAction("Start " + cmbType.Items[cmbType.SelectedIndex].ToString() + " attack alphabet number : " + ((chkBoxAlpha1.Checked) ? "1" : (chkBoxAlpha2.Checked) ? "2" : (chkBoxAlpha3.Checked) ? "3" : "3"));
         }
 
-        private void LogAction()
+        private void LogAction(string action)
         {
             Start = DateTime.Now;
-            this.dataGridView1.Rows.Add(new object[] { Start, cmbType.Items[cmbType.SelectedIndex].ToString(), tbxArchivePath.Text });
+            this.dataGridView1.Rows.Add(new object[] { Start, cmbType.Items[cmbType.SelectedIndex].ToString(),action, tbxArchivePath.Text });
         }
 
     }

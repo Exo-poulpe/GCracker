@@ -44,9 +44,6 @@
             this.grpBoxArchivePath = new System.Windows.Forms.GroupBox();
             this.grpAttack = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Types = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.File = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblPasswordCurrent = new System.Windows.Forms.Label();
             this.lblPasswordSpeed = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
@@ -64,6 +61,10 @@
             this.tbxLogsPath = new System.Windows.Forms.TextBox();
             this.lblLogsPath = new System.Windows.Forms.Label();
             this.btnFind = new System.Windows.Forms.Button();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Types = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Event = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.File = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.grpBoxArchivePath.SuspendLayout();
@@ -235,6 +236,7 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Date,
             this.Types,
+            this.Event,
             this.File});
             this.dataGridView1.Location = new System.Drawing.Point(12, 21);
             this.dataGridView1.Name = "dataGridView1";
@@ -242,24 +244,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(745, 150);
             this.dataGridView1.TabIndex = 8;
-            // 
-            // Date
-            // 
-            this.Date.HeaderText = "Date";
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
-            // 
-            // Types
-            // 
-            this.Types.HeaderText = "Types";
-            this.Types.Name = "Types";
-            this.Types.ReadOnly = true;
-            // 
-            // File
-            // 
-            this.File.HeaderText = "Files";
-            this.File.Name = "File";
-            this.File.ReadOnly = true;
             // 
             // lblPasswordCurrent
             // 
@@ -425,6 +409,30 @@
             this.btnFind.Text = "...";
             this.btnFind.UseVisualStyleBackColor = true;
             // 
+            // Date
+            // 
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            // 
+            // Types
+            // 
+            this.Types.HeaderText = "Types";
+            this.Types.Name = "Types";
+            this.Types.ReadOnly = true;
+            // 
+            // Event
+            // 
+            this.Event.HeaderText = "Event";
+            this.Event.Name = "Event";
+            this.Event.ReadOnly = true;
+            // 
+            // File
+            // 
+            this.File.HeaderText = "Files";
+            this.File.Name = "File";
+            this.File.ReadOnly = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -481,9 +489,6 @@
         private System.Windows.Forms.GroupBox grpBoxArchivePath;
         private System.Windows.Forms.GroupBox grpAttack;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Types;
-        private System.Windows.Forms.DataGridViewTextBoxColumn File;
         private System.Windows.Forms.Label lblPasswordCurrent;
         private System.Windows.Forms.Label lblPasswordSpeed;
         private System.Windows.Forms.ProgressBar progressBar1;
@@ -501,6 +506,10 @@
         private System.Windows.Forms.Label lblLogsPath;
         private System.Windows.Forms.TextBox tbxLogsPath;
         private System.Windows.Forms.CheckBox chkBoxLogs;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Types;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Event;
+        private System.Windows.Forms.DataGridViewTextBoxColumn File;
     }
 }
 

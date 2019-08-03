@@ -42,6 +42,11 @@ namespace GCracker
             tmr.Elapsed += ElapsedTick;
         }
 
+        public static void Stop()
+        {
+            tmr.Stop();
+        }
+
         public void ElapsedTick(object sender, ElapsedEventArgs e)
         {
             Parent.UpdateLabelPassword((tmp != null) ? tmp.ToString() : "", count.ToString(), c.ToString());
