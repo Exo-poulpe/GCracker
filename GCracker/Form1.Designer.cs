@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.attackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.attackToolStripMenuItem = new System.Windows.Forms.ToolStripComboBox();
             this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSettings = new System.Windows.Forms.Button();
@@ -44,6 +44,10 @@
             this.grpBoxArchivePath = new System.Windows.Forms.GroupBox();
             this.grpAttack = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Types = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Event = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.File = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblPasswordCurrent = new System.Windows.Forms.Label();
             this.lblPasswordSpeed = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
@@ -57,14 +61,10 @@
             this.chkBoxAlpha3 = new System.Windows.Forms.RadioButton();
             this.chkBoxAlpha1 = new System.Windows.Forms.RadioButton();
             this.grpBoxLog = new System.Windows.Forms.GroupBox();
-            this.chkBoxLogs = new System.Windows.Forms.CheckBox();
-            this.tbxLogsPath = new System.Windows.Forms.TextBox();
-            this.lblLogsPath = new System.Windows.Forms.Label();
             this.btnFind = new System.Windows.Forms.Button();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Types = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Event = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.File = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblLogsPath = new System.Windows.Forms.Label();
+            this.tbxLogsPath = new System.Windows.Forms.TextBox();
+            this.chkBoxLogs = new System.Windows.Forms.CheckBox();
             this.tbxWordlistPath = new System.Windows.Forms.TextBox();
             this.btnFindWordlist = new System.Windows.Forms.Button();
             this.grpWordList = new System.Windows.Forms.GroupBox();
@@ -89,26 +89,34 @@
             this.helpToolStripMenuItem1});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(782, 28);
+            this.menuStrip2.Size = new System.Drawing.Size(782, 32);
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
             // 
             // fileToolStripMenuItem1
             // 
             this.fileToolStripMenuItem1.Name = "fileToolStripMenuItem1";
-            this.fileToolStripMenuItem1.Size = new System.Drawing.Size(44, 24);
+            this.fileToolStripMenuItem1.Size = new System.Drawing.Size(44, 28);
             this.fileToolStripMenuItem1.Text = "File";
             // 
             // attackToolStripMenuItem
             // 
+            this.attackToolStripMenuItem.Items.AddRange(new object[] {
+            "Zip",
+            "Rar",
+            "MD5",
+            "SHA-1",
+            "SHA-256",
+            "SHA-512"});
             this.attackToolStripMenuItem.Name = "attackToolStripMenuItem";
-            this.attackToolStripMenuItem.Size = new System.Drawing.Size(63, 24);
+            this.attackToolStripMenuItem.Size = new System.Drawing.Size(75, 28);
             this.attackToolStripMenuItem.Text = "Attack";
+            this.attackToolStripMenuItem.SelectedIndexChanged += new System.EventHandler(this.AttackToolStripMenuItem_SelectedIndexChanged);
             // 
             // helpToolStripMenuItem1
             // 
             this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
-            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(53, 24);
+            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(53, 28);
             this.helpToolStripMenuItem1.Text = "Help";
             // 
             // panel1
@@ -153,6 +161,7 @@
             // 
             // btnStart
             // 
+            this.btnStart.Enabled = false;
             this.btnStart.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStart.ForeColor = System.Drawing.Color.Black;
@@ -167,6 +176,7 @@
             // 
             // btnStop
             // 
+            this.btnStop.Enabled = false;
             this.btnStop.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.btnStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStop.ForeColor = System.Drawing.Color.Black;
@@ -248,6 +258,30 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(745, 150);
             this.dataGridView1.TabIndex = 8;
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            // 
+            // Types
+            // 
+            this.Types.HeaderText = "Types";
+            this.Types.Name = "Types";
+            this.Types.ReadOnly = true;
+            // 
+            // Event
+            // 
+            this.Event.HeaderText = "Event";
+            this.Event.Name = "Event";
+            this.Event.ReadOnly = true;
+            // 
+            // File
+            // 
+            this.File.HeaderText = "Files";
+            this.File.Name = "File";
+            this.File.ReadOnly = true;
             // 
             // lblPasswordCurrent
             // 
@@ -378,22 +412,14 @@
             this.grpBoxLog.TabStop = false;
             this.grpBoxLog.Text = "Logs";
             // 
-            // chkBoxLogs
+            // btnFind
             // 
-            this.chkBoxLogs.AutoSize = true;
-            this.chkBoxLogs.Location = new System.Drawing.Point(24, 33);
-            this.chkBoxLogs.Name = "chkBoxLogs";
-            this.chkBoxLogs.Size = new System.Drawing.Size(110, 21);
-            this.chkBoxLogs.TabIndex = 0;
-            this.chkBoxLogs.Text = "Activate logs";
-            this.chkBoxLogs.UseVisualStyleBackColor = true;
-            // 
-            // tbxLogsPath
-            // 
-            this.tbxLogsPath.Location = new System.Drawing.Point(25, 90);
-            this.tbxLogsPath.Name = "tbxLogsPath";
-            this.tbxLogsPath.Size = new System.Drawing.Size(370, 22);
-            this.tbxLogsPath.TabIndex = 1;
+            this.btnFind.Location = new System.Drawing.Point(396, 88);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(42, 26);
+            this.btnFind.TabIndex = 3;
+            this.btnFind.Text = "...";
+            this.btnFind.UseVisualStyleBackColor = true;
             // 
             // lblLogsPath
             // 
@@ -404,38 +430,22 @@
             this.lblLogsPath.TabIndex = 2;
             this.lblLogsPath.Text = "Path of logs : ";
             // 
-            // btnFind
+            // tbxLogsPath
             // 
-            this.btnFind.Location = new System.Drawing.Point(396, 88);
-            this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(42, 26);
-            this.btnFind.TabIndex = 3;
-            this.btnFind.Text = "...";
-            this.btnFind.UseVisualStyleBackColor = true;
+            this.tbxLogsPath.Location = new System.Drawing.Point(25, 90);
+            this.tbxLogsPath.Name = "tbxLogsPath";
+            this.tbxLogsPath.Size = new System.Drawing.Size(370, 22);
+            this.tbxLogsPath.TabIndex = 1;
             // 
-            // Date
+            // chkBoxLogs
             // 
-            this.Date.HeaderText = "Date";
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
-            // 
-            // Types
-            // 
-            this.Types.HeaderText = "Types";
-            this.Types.Name = "Types";
-            this.Types.ReadOnly = true;
-            // 
-            // Event
-            // 
-            this.Event.HeaderText = "Event";
-            this.Event.Name = "Event";
-            this.Event.ReadOnly = true;
-            // 
-            // File
-            // 
-            this.File.HeaderText = "Files";
-            this.File.Name = "File";
-            this.File.ReadOnly = true;
+            this.chkBoxLogs.AutoSize = true;
+            this.chkBoxLogs.Location = new System.Drawing.Point(24, 33);
+            this.chkBoxLogs.Name = "chkBoxLogs";
+            this.chkBoxLogs.Size = new System.Drawing.Size(110, 21);
+            this.chkBoxLogs.TabIndex = 0;
+            this.chkBoxLogs.Text = "Activate logs";
+            this.chkBoxLogs.UseVisualStyleBackColor = true;
             // 
             // tbxWordlistPath
             // 
@@ -513,7 +523,6 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnOpen;
-        private System.Windows.Forms.ToolStripMenuItem attackToolStripMenuItem;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Button btnSettings;
@@ -547,6 +556,7 @@
         private System.Windows.Forms.TextBox tbxWordlistPath;
         private System.Windows.Forms.Button btnFindWordlist;
         private System.Windows.Forms.GroupBox grpWordList;
+        private System.Windows.Forms.ToolStripComboBox attackToolStripMenuItem;
     }
 }
 

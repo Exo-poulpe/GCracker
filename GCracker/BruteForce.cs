@@ -9,13 +9,12 @@ using ICSharpCode.SharpZipLib.Zip;
 
 namespace GCracker
 {
-    class BruteForce
+    class BruteForce : BaseAttackor, IAttackor
     {
         public static char[] ALPHABET = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
         public static char[] ALPHABET_UPPER = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
         public static char[] ALPHABET_UPPER_NUMBER = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".ToCharArray();
 
-        public Form1 Parent { get; set; }
 
         static char[] Alphabet;
 
@@ -29,31 +28,13 @@ namespace GCracker
         static uint count = 0;
         double c = 0;
 
-
-
-        static Timer tmr;
-
-
-        public void Init()
-        {
-            tmr = new Timer();
-            tmr.Interval = 1000;
-            tmr.Start();
-            tmr.Elapsed += ElapsedTick;
-        }
-
-        public static void Stop()
-        {
-            tmr.Stop();
-        }
-
-        public void ElapsedTick(object sender, ElapsedEventArgs e)
+        public override void ElapsedTick(object sender, ElapsedEventArgs e)
         {
             Parent.UpdateLabelPassword((tmp != null) ? tmp.ToString() : "", count.ToString(), c.ToString());
             count = 0;
         }
 
-        public string ArchiveBruteForce(ZipFile file)
+        public string ZipAttack(ZipFile file)
         {
             Init();
             string pass = Alphabet[0].ToString();
@@ -181,7 +162,6 @@ namespace GCracker
 
         }
 
-
         public BruteForce(Form1 parent,int alphaNumber)
         {
             this.Parent = parent;
@@ -202,7 +182,36 @@ namespace GCracker
             }
         }
 
+        public void RarAttack()
+        {
+            throw new NotImplementedException();
+        }
 
+        public void Md5Attack()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Md4Attack()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Sha1Attack()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Sha256Attack()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Sha512Attack()
+        {
+            throw new NotImplementedException();
+        }
 
     }
 }
+

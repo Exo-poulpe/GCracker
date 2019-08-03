@@ -9,7 +9,7 @@ using System.Timers;
 
 namespace GCracker
 {
-    class Wordlist
+    class Wordlist : BaseAttackor, IAttackor
     {
         private string _path;
 
@@ -27,8 +27,7 @@ namespace GCracker
                 _lineNumber = value;
             }
         }
-
-        public Form1 Parent { get; set; }
+               
 
         public string Path
         {
@@ -39,10 +38,7 @@ namespace GCracker
         static StringBuilder tmp;
         string curPass = "";
         static uint count = 0;
-        double c = 0;
-
-
-        static Timer tmr;
+        double c = 0;       
 
 
         public Wordlist(Form1 parent, string pathOfWordlist)
@@ -53,26 +49,13 @@ namespace GCracker
 
         }
 
-        public void Init()
-        {
-            tmr = new Timer();
-            tmr.Interval = 1000;
-            tmr.Start();
-            tmr.Elapsed += ElapsedTick;
-        }
-
-        public static void Stop()
-        {
-            tmr.Stop();
-        }
-
-        public void ElapsedTick(object sender, ElapsedEventArgs e)
+        public override void ElapsedTick(object sender, ElapsedEventArgs e)
         {
             Parent.UpdateLabelPassword((tmp != null) ? tmp.ToString() : "", count.ToString(), c.ToString());
             count = 0;
         }
 
-        public string WordlistAttack(ZipFile file)
+        public string ZipAttack(ZipFile file)
         {
             Init();
             using (var reader = File.OpenText(this.Path))
@@ -132,6 +115,34 @@ namespace GCracker
             this.LineNumber = lineCount;
         }
 
+        public void RarAttack()
+        {
+            throw new NotImplementedException();
+        }
 
+        public void Md5Attack()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Md4Attack()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Sha1Attack()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Sha256Attack()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Sha512Attack()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
