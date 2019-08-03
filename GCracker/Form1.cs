@@ -29,7 +29,7 @@ namespace GCracker
 
         public AutoResetEvent PasswordFound = new AutoResetEvent(false);
 
-        private Thread T,T1;
+        private Thread T, T1;
         public Form1()
         {
             InitializeComponent();
@@ -43,7 +43,23 @@ namespace GCracker
             this.tbxArchivePath.DoubleClick += OpenExplorer;
             this.btnSettings.Click += NewUI;
             this.FormClosing += AppQuit;
+            this.btnFindWordlist.Click += FindWordList;
         }
+
+
+        public void FindWordList(object sender, EventArgs e)
+        {
+            OpenFileDialog opfd = new OpenFileDialog();
+            opfd.InitialDirectory = Environment.CurrentDirectory;
+            opfd.Filter = " Text file (*.txt) |*.txt|  List file (*.lst) |*.lst";
+            opfd.FilterIndex = 0;
+            opfd.Multiselect = false;
+            if (opfd.ShowDialog() == DialogResult.OK)
+            {
+                this.tbxWordlistPath.Text = opfd.FileName;
+            }
+        }
+
 
         public void SetTextSettings()
         {
@@ -88,15 +104,29 @@ namespace GCracker
 
         public void StopAttack(object sender, EventArgs e)
         {
-            T.Abort();
-            T1.Abort();
-            if (T.IsAlive)
+            if (cmbType.SelectedIndex == 0)
             {
-                T.Join();
+                T.Abort();
+                T1.Abort();
+                if (T.IsAlive)
+                {
+                    T.Join();
+                }
+                BruteForce.Stop();
+                ResetLabelPassword();
+                LogAction("Stop " + cmbType.Items[cmbType.SelectedIndex].ToString() + " attack alphabet number : " + ((chkBoxAlpha1.Checked) ? "1" : (chkBoxAlpha2.Checked) ? "2" : (chkBoxAlpha3.Checked) ? "3" : "3"));
             }
-            BruteForce.Stop();
-            ResetLabelPassword();
-            LogAction("Stop " + cmbType.Items[cmbType.SelectedIndex].ToString() + " attack alphabet number : " + ((chkBoxAlpha1.Checked) ? "1" : (chkBoxAlpha2.Checked) ? "2" : (chkBoxAlpha3.Checked) ? "3" : "3"));
+            else if (cmbType.SelectedIndex == 1)
+            {
+                T.Abort();
+                T1.Abort();
+                if (T.IsAlive)
+                {
+                    T.Join();
+                }
+                ResetLabelPassword();
+
+            }
         }
 
         public void ResetLabelPassword()
@@ -108,12 +138,12 @@ namespace GCracker
 
             lblPasswordSpeed.Invoke(new MethodInvoker(() =>
             {
-                lblPasswordSpeed.Text = DEFAULT_STRING_PASSWORD_COUNT ;
+                lblPasswordSpeed.Text = DEFAULT_STRING_PASSWORD_COUNT;
             }));
 
             lblPasswordNumber.Invoke(new MethodInvoker(() =>
             {
-                lblPasswordNumber.Text = DEFAULT_STRING_PASSWORD_NUMBER ;
+                lblPasswordNumber.Text = DEFAULT_STRING_PASSWORD_NUMBER;
             }));
         }
 
@@ -171,18 +201,26 @@ namespace GCracker
         public void ExtractArchive(object sender, EventArgs e)
         {
             ZipFile archive = new ZipFile(tbxArchivePath.Text);
-            ZipEntry test = new ZipEntry(tbxArchivePath.Text);
-            
-            BruteForce bf = new BruteForce(this,(chkBoxAlpha1.Checked)?1:(chkBoxAlpha2.Checked)?2:(chkBoxAlpha3.Checked)?3:3);
-            T = new Thread(new ThreadStart(() => { Password = bf.ArchiveBruteForce(archive); End = DateTime.Now; T.Abort(); }));
-            T.Start();
+
+            if (cmbType.SelectedIndex == 0)
+            {
+                BruteForce bf = new BruteForce(this, (chkBoxAlpha1.Checked) ? 1 : (chkBoxAlpha2.Checked) ? 2 : (chkBoxAlpha3.Checked) ? 3 : 3);
+                T = new Thread(new ThreadStart(() => { Password = bf.ArchiveBruteForce(archive); End = DateTime.Now; T.Abort(); }));
+                T.Start();
+            }
+            else if (cmbType.SelectedIndex == 1)
+            {
+                Wordlist w = new Wordlist(this,this.tbxWordlistPath.Text);
+                T = new Thread(new ThreadStart(() => { Password = w.WordlistAttack(archive); End = DateTime.Now; T.Abort(); }));
+                T.Start();
+            }
             LogAction("Start " + cmbType.Items[cmbType.SelectedIndex].ToString() + " attack alphabet number : " + ((chkBoxAlpha1.Checked) ? "1" : (chkBoxAlpha2.Checked) ? "2" : (chkBoxAlpha3.Checked) ? "3" : "3"));
         }
 
         private void LogAction(string action)
         {
             Start = DateTime.Now;
-            this.dataGridView1.Rows.Add(new object[] { Start, cmbType.Items[cmbType.SelectedIndex].ToString(),action, tbxArchivePath.Text });
+            this.dataGridView1.Rows.Add(new object[] { Start, cmbType.Items[cmbType.SelectedIndex].ToString(), action, tbxArchivePath.Text });
         }
 
     }

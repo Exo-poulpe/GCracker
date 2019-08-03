@@ -65,6 +65,9 @@
             this.Types = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Event = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.File = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbxWordlistPath = new System.Windows.Forms.TextBox();
+            this.btnFindWordlist = new System.Windows.Forms.Button();
+            this.grpWordList = new System.Windows.Forms.GroupBox();
             this.menuStrip2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.grpBoxArchivePath.SuspendLayout();
@@ -74,6 +77,7 @@
             this.grpSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.grpBoxLog.SuspendLayout();
+            this.grpWordList.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip2
@@ -367,7 +371,7 @@
             this.grpBoxLog.Controls.Add(this.lblLogsPath);
             this.grpBoxLog.Controls.Add(this.tbxLogsPath);
             this.grpBoxLog.Controls.Add(this.chkBoxLogs);
-            this.grpBoxLog.Location = new System.Drawing.Point(799, 311);
+            this.grpBoxLog.Location = new System.Drawing.Point(799, 285);
             this.grpBoxLog.Name = "grpBoxLog";
             this.grpBoxLog.Size = new System.Drawing.Size(440, 131);
             this.grpBoxLog.TabIndex = 16;
@@ -433,11 +437,39 @@
             this.File.Name = "File";
             this.File.ReadOnly = true;
             // 
+            // tbxWordlistPath
+            // 
+            this.tbxWordlistPath.Location = new System.Drawing.Point(21, 22);
+            this.tbxWordlistPath.Name = "tbxWordlistPath";
+            this.tbxWordlistPath.Size = new System.Drawing.Size(371, 22);
+            this.tbxWordlistPath.TabIndex = 17;
+            // 
+            // btnFindWordlist
+            // 
+            this.btnFindWordlist.Location = new System.Drawing.Point(393, 19);
+            this.btnFindWordlist.Name = "btnFindWordlist";
+            this.btnFindWordlist.Size = new System.Drawing.Size(42, 26);
+            this.btnFindWordlist.TabIndex = 18;
+            this.btnFindWordlist.Text = "...";
+            this.btnFindWordlist.UseVisualStyleBackColor = true;
+            // 
+            // grpWordList
+            // 
+            this.grpWordList.Controls.Add(this.btnFindWordlist);
+            this.grpWordList.Controls.Add(this.tbxWordlistPath);
+            this.grpWordList.Location = new System.Drawing.Point(802, 427);
+            this.grpWordList.Name = "grpWordList";
+            this.grpWordList.Size = new System.Drawing.Size(436, 63);
+            this.grpWordList.TabIndex = 19;
+            this.grpWordList.TabStop = false;
+            this.grpWordList.Text = "Wordlist settings";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(782, 503);
+            this.Controls.Add(this.grpWordList);
             this.Controls.Add(this.grpBoxLog);
             this.Controls.Add(this.grpSettings);
             this.Controls.Add(this.lblPasswordNumber);
@@ -468,6 +500,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.grpBoxLog.ResumeLayout(false);
             this.grpBoxLog.PerformLayout();
+            this.grpWordList.ResumeLayout(false);
+            this.grpWordList.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -510,6 +544,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Types;
         private System.Windows.Forms.DataGridViewTextBoxColumn Event;
         private System.Windows.Forms.DataGridViewTextBoxColumn File;
+        private System.Windows.Forms.TextBox tbxWordlistPath;
+        private System.Windows.Forms.Button btnFindWordlist;
+        private System.Windows.Forms.GroupBox grpWordList;
     }
 }
 
