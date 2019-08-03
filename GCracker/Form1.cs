@@ -166,7 +166,7 @@ namespace GCracker
         {
             while (PasswordFound.WaitOne())
             {
-                Form2 frm = new Form2(Password, Start, End);
+                Form2 frm = new Form2(Password, this.Start, this.End);
                 frm.ShowDialog();
                 T.Abort();
             }
@@ -220,14 +220,14 @@ namespace GCracker
             {
                 ZipFile archive = new ZipFile(tbxArchivePath.Text);
                 Attack = new BruteForce(this, (chkBoxAlpha1.Checked) ? 1 : (chkBoxAlpha2.Checked) ? 2 : (chkBoxAlpha3.Checked) ? 3 : 3);
-                T = new Thread(new ThreadStart(() => { Password = Attack.ZipAttack(archive); End = DateTime.Now; T.Abort(); }));
+                T = new Thread(new ThreadStart(() => { Password = Attack.ZipAttack(archive); this.End = DateTime.Now; T.Abort(); }));
                 T.Start();
             }
             else if (cmbType.SelectedIndex == 1)
             {
                 ZipFile archive = new ZipFile(tbxArchivePath.Text);
                 Attack = new Wordlist(this, this.tbxWordlistPath.Text);
-                T = new Thread(new ThreadStart(() => { Password = Attack.ZipAttack(archive); End = DateTime.Now; T.Abort(); }));
+                T = new Thread(new ThreadStart(() => { Password = Attack.ZipAttack(archive); this.End = DateTime.Now; T.Abort(); }));
                 T.Start();
             }
             LogAction("Start " + cmbType.Items[cmbType.SelectedIndex].ToString() + " attack alphabet number : " + ((chkBoxAlpha1.Checked) ? "1" : (chkBoxAlpha2.Checked) ? "2" : (chkBoxAlpha3.Checked) ? "3" : "3"));

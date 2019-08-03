@@ -28,7 +28,6 @@ namespace GCracker
             lblStartDate.Text = DEFAULT_LABEL_DATE_START + start.ToString();
             lblDateEnd.Text = DEFAULT_LABEL_DATE_END + end.ToString();
             this.btnCopy.Click += CopyToClipBoard;
-
         }
 
         public void CopyToClipBoard(object sender,EventArgs e)
@@ -37,7 +36,6 @@ namespace GCracker
             T.SetApartmentState(ApartmentState.STA);
             T.Start();
             T.Join();
-            
         }
     }
 }

@@ -77,6 +77,7 @@ namespace GCracker
                         {
                             goto RETRY;
                         }
+                        Parent.Password = tmp.ToString();
                         Parent.PasswordFound.Set();
                         return tmp.ToString();
                     }
