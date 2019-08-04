@@ -14,8 +14,8 @@ namespace GCracker
 {
     public partial class Form1 : Form
     {
-        Size DEFAULT_SIZE_MIN = new Size(800, 550);
-        Size DEFAULT_SIZE_MAX = new Size(1265, 550);
+        Size DEFAULT_SIZE_MIN;
+        Size DEFAULT_SIZE_MAX;
         const string DEFAULT_STRING_PASSWORD_CURRENT = "Password current : ";
         const string DEFAULT_STRING_PASSWORD_COUNT = "Password speed : ";
         const string DEFAULT_STRING_PASSWORD_NUMBER = "Password number : ";
@@ -42,6 +42,8 @@ namespace GCracker
         public Form1()
         {
             InitializeComponent();
+            DEFAULT_SIZE_MIN = new Size(this.Size.Width, this.Size.Height);
+            DEFAULT_SIZE_MAX = new Size(DEFAULT_SIZE_MIN.Width + (grpSettings.Size.Width + 30), DEFAULT_SIZE_MIN.Height);
             SetTextSettings();
             T1 = new Thread(new ThreadStart(EventPassword));
             T1.Start();
@@ -166,7 +168,7 @@ namespace GCracker
         {
             while (PasswordFound.WaitOne())
             {
-                Form2 frm = new Form2(Password, this.Start, this.End);
+                Form2 frm = new Form2(Password,this.tbxArchivePath.Text, this.Start, this.End);
                 frm.ShowDialog();
                 T.Abort();
             }

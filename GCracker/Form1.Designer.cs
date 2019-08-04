@@ -89,14 +89,15 @@
             this.helpToolStripMenuItem1});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(782, 32);
+            this.menuStrip2.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip2.Size = new System.Drawing.Size(584, 27);
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
             // 
             // fileToolStripMenuItem1
             // 
             this.fileToolStripMenuItem1.Name = "fileToolStripMenuItem1";
-            this.fileToolStripMenuItem1.Size = new System.Drawing.Size(44, 28);
+            this.fileToolStripMenuItem1.Size = new System.Drawing.Size(37, 23);
             this.fileToolStripMenuItem1.Text = "File";
             // 
             // attackToolStripMenuItem
@@ -109,14 +110,14 @@
             "SHA-256",
             "SHA-512"});
             this.attackToolStripMenuItem.Name = "attackToolStripMenuItem";
-            this.attackToolStripMenuItem.Size = new System.Drawing.Size(75, 28);
+            this.attackToolStripMenuItem.Size = new System.Drawing.Size(75, 23);
             this.attackToolStripMenuItem.Text = "Attack";
             this.attackToolStripMenuItem.SelectedIndexChanged += new System.EventHandler(this.AttackToolStripMenuItem_SelectedIndexChanged);
             // 
             // helpToolStripMenuItem1
             // 
             this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
-            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(53, 28);
+            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(44, 23);
             this.helpToolStripMenuItem1.Text = "Help";
             // 
             // panel1
@@ -126,9 +127,10 @@
             this.panel1.Controls.Add(this.btnStart);
             this.panel1.Controls.Add(this.btnStop);
             this.panel1.Controls.Add(this.btnOpen);
-            this.panel1.Location = new System.Drawing.Point(0, 31);
+            this.panel1.Location = new System.Drawing.Point(0, 25);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(767, 84);
+            this.panel1.Size = new System.Drawing.Size(575, 86);
             this.panel1.TabIndex = 2;
             // 
             // btnSettings
@@ -137,9 +139,10 @@
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSettings.ForeColor = System.Drawing.Color.Black;
             this.btnSettings.Image = global::GCracker.Properties.Resources.settings;
-            this.btnSettings.Location = new System.Drawing.Point(458, -15);
+            this.btnSettings.Location = new System.Drawing.Point(343, -7);
+            this.btnSettings.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(96, 104);
+            this.btnSettings.Size = new System.Drawing.Size(75, 95);
             this.btnSettings.TabIndex = 4;
             this.btnSettings.Text = "Settings";
             this.btnSettings.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -151,9 +154,10 @@
             this.btnHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHelp.ForeColor = System.Drawing.Color.Black;
             this.btnHelp.Image = global::GCracker.Properties.Resources.question;
-            this.btnHelp.Location = new System.Drawing.Point(614, -24);
+            this.btnHelp.Location = new System.Drawing.Point(459, -7);
+            this.btnHelp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnHelp.Name = "btnHelp";
-            this.btnHelp.Size = new System.Drawing.Size(96, 113);
+            this.btnHelp.Size = new System.Drawing.Size(75, 95);
             this.btnHelp.TabIndex = 3;
             this.btnHelp.Text = "Help";
             this.btnHelp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -166,9 +170,10 @@
             this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStart.ForeColor = System.Drawing.Color.Black;
             this.btnStart.Image = global::GCracker.Properties.Resources.play_button;
-            this.btnStart.Location = new System.Drawing.Point(167, -17);
+            this.btnStart.Location = new System.Drawing.Point(125, -7);
+            this.btnStart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(96, 105);
+            this.btnStart.Size = new System.Drawing.Size(75, 95);
             this.btnStart.TabIndex = 2;
             this.btnStart.Text = "Start";
             this.btnStart.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -181,9 +186,10 @@
             this.btnStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStop.ForeColor = System.Drawing.Color.Black;
             this.btnStop.Image = global::GCracker.Properties.Resources.stop;
-            this.btnStop.Location = new System.Drawing.Point(314, -17);
+            this.btnStop.Location = new System.Drawing.Point(236, -7);
+            this.btnStop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(96, 104);
+            this.btnStop.Size = new System.Drawing.Size(75, 95);
             this.btnStop.TabIndex = 1;
             this.btnStop.Text = "Stop";
             this.btnStop.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -195,9 +201,10 @@
             this.btnOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOpen.ForeColor = System.Drawing.Color.Black;
             this.btnOpen.Image = global::GCracker.Properties.Resources.folder64;
-            this.btnOpen.Location = new System.Drawing.Point(12, -9);
+            this.btnOpen.Location = new System.Drawing.Point(9, -7);
+            this.btnOpen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(96, 93);
+            this.btnOpen.Size = new System.Drawing.Size(75, 95);
             this.btnOpen.TabIndex = 0;
             this.btnOpen.Text = "Open";
             this.btnOpen.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -205,9 +212,10 @@
             // 
             // tbxArchivePath
             // 
-            this.tbxArchivePath.Location = new System.Drawing.Point(20, 19);
+            this.tbxArchivePath.Location = new System.Drawing.Point(15, 15);
+            this.tbxArchivePath.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbxArchivePath.Name = "tbxArchivePath";
-            this.tbxArchivePath.Size = new System.Drawing.Size(299, 22);
+            this.tbxArchivePath.Size = new System.Drawing.Size(225, 20);
             this.tbxArchivePath.TabIndex = 3;
             // 
             // cmbType
@@ -217,17 +225,20 @@
             this.cmbType.Items.AddRange(new object[] {
             "BruteForce",
             "Wordlist"});
-            this.cmbType.Location = new System.Drawing.Point(14, 19);
+            this.cmbType.Location = new System.Drawing.Point(10, 15);
+            this.cmbType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbType.Name = "cmbType";
-            this.cmbType.Size = new System.Drawing.Size(227, 24);
+            this.cmbType.Size = new System.Drawing.Size(171, 21);
             this.cmbType.TabIndex = 5;
             // 
             // grpBoxArchivePath
             // 
             this.grpBoxArchivePath.Controls.Add(this.tbxArchivePath);
-            this.grpBoxArchivePath.Location = new System.Drawing.Point(12, 142);
+            this.grpBoxArchivePath.Location = new System.Drawing.Point(9, 115);
+            this.grpBoxArchivePath.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpBoxArchivePath.Name = "grpBoxArchivePath";
-            this.grpBoxArchivePath.Size = new System.Drawing.Size(330, 48);
+            this.grpBoxArchivePath.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpBoxArchivePath.Size = new System.Drawing.Size(248, 39);
             this.grpBoxArchivePath.TabIndex = 6;
             this.grpBoxArchivePath.TabStop = false;
             this.grpBoxArchivePath.Text = "Path of archive";
@@ -235,9 +246,11 @@
             // grpAttack
             // 
             this.grpAttack.Controls.Add(this.cmbType);
-            this.grpAttack.Location = new System.Drawing.Point(495, 142);
+            this.grpAttack.Location = new System.Drawing.Point(371, 115);
+            this.grpAttack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpAttack.Name = "grpAttack";
-            this.grpAttack.Size = new System.Drawing.Size(262, 48);
+            this.grpAttack.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpAttack.Size = new System.Drawing.Size(196, 39);
             this.grpAttack.TabIndex = 7;
             this.grpAttack.TabStop = false;
             this.grpAttack.Text = "Types d\'attack";
@@ -252,11 +265,12 @@
             this.Types,
             this.Event,
             this.File});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 21);
+            this.dataGridView1.Location = new System.Drawing.Point(9, 17);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(745, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(559, 122);
             this.dataGridView1.TabIndex = 8;
             // 
             // Date
@@ -286,43 +300,49 @@
             // lblPasswordCurrent
             // 
             this.lblPasswordCurrent.AutoSize = true;
-            this.lblPasswordCurrent.Location = new System.Drawing.Point(53, 397);
+            this.lblPasswordCurrent.Location = new System.Drawing.Point(40, 323);
+            this.lblPasswordCurrent.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPasswordCurrent.Name = "lblPasswordCurrent";
-            this.lblPasswordCurrent.Size = new System.Drawing.Size(130, 17);
+            this.lblPasswordCurrent.Size = new System.Drawing.Size(98, 13);
             this.lblPasswordCurrent.TabIndex = 9;
             this.lblPasswordCurrent.Text = "Password current : ";
             // 
             // lblPasswordSpeed
             // 
             this.lblPasswordSpeed.AutoSize = true;
-            this.lblPasswordSpeed.Location = new System.Drawing.Point(479, 397);
+            this.lblPasswordSpeed.Location = new System.Drawing.Point(359, 323);
+            this.lblPasswordSpeed.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPasswordSpeed.Name = "lblPasswordSpeed";
-            this.lblPasswordSpeed.Size = new System.Drawing.Size(124, 17);
+            this.lblPasswordSpeed.Size = new System.Drawing.Size(94, 13);
             this.lblPasswordSpeed.TabIndex = 10;
             this.lblPasswordSpeed.Text = "Password speed : ";
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(12, 457);
+            this.progressBar1.Location = new System.Drawing.Point(9, 371);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(758, 34);
+            this.progressBar1.Size = new System.Drawing.Size(568, 28);
             this.progressBar1.TabIndex = 11;
             // 
             // lblCrackProgression
             // 
             this.lblCrackProgression.AutoSize = true;
-            this.lblCrackProgression.Location = new System.Drawing.Point(15, 435);
+            this.lblCrackProgression.Location = new System.Drawing.Point(11, 353);
+            this.lblCrackProgression.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCrackProgression.Name = "lblCrackProgression";
-            this.lblCrackProgression.Size = new System.Drawing.Size(119, 17);
+            this.lblCrackProgression.Size = new System.Drawing.Size(90, 13);
             this.lblCrackProgression.TabIndex = 12;
             this.lblCrackProgression.Text = "Progress attack : ";
             // 
             // grpBoxTable
             // 
             this.grpBoxTable.Controls.Add(this.dataGridView1);
-            this.grpBoxTable.Location = new System.Drawing.Point(0, 196);
+            this.grpBoxTable.Location = new System.Drawing.Point(0, 159);
+            this.grpBoxTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpBoxTable.Name = "grpBoxTable";
-            this.grpBoxTable.Size = new System.Drawing.Size(767, 184);
+            this.grpBoxTable.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpBoxTable.Size = new System.Drawing.Size(575, 150);
             this.grpBoxTable.TabIndex = 13;
             this.grpBoxTable.TabStop = false;
             this.grpBoxTable.Text = "Status table";
@@ -330,9 +350,10 @@
             // lblPasswordNumber
             // 
             this.lblPasswordNumber.AutoSize = true;
-            this.lblPasswordNumber.Location = new System.Drawing.Point(479, 425);
+            this.lblPasswordNumber.Location = new System.Drawing.Point(359, 345);
+            this.lblPasswordNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPasswordNumber.Name = "lblPasswordNumber";
-            this.lblPasswordNumber.Size = new System.Drawing.Size(133, 17);
+            this.lblPasswordNumber.Size = new System.Drawing.Size(100, 13);
             this.lblPasswordNumber.TabIndex = 14;
             this.lblPasswordNumber.Text = "Password number : ";
             // 
@@ -343,26 +364,30 @@
             this.grpSettings.Controls.Add(this.chkBoxAlpha2);
             this.grpSettings.Controls.Add(this.chkBoxAlpha3);
             this.grpSettings.Controls.Add(this.chkBoxAlpha1);
-            this.grpSettings.Location = new System.Drawing.Point(799, 69);
+            this.grpSettings.Location = new System.Drawing.Point(599, 56);
+            this.grpSettings.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpSettings.Name = "grpSettings";
-            this.grpSettings.Size = new System.Drawing.Size(440, 213);
+            this.grpSettings.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpSettings.Size = new System.Drawing.Size(330, 173);
             this.grpSettings.TabIndex = 15;
             this.grpSettings.TabStop = false;
             this.grpSettings.Text = "Settings";
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(156, 46);
+            this.numericUpDown1.Location = new System.Drawing.Point(117, 37);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDown1.Size = new System.Drawing.Size(90, 20);
             this.numericUpDown1.TabIndex = 4;
             // 
             // chkBoxMaxLength
             // 
             this.chkBoxMaxLength.AutoSize = true;
-            this.chkBoxMaxLength.Location = new System.Drawing.Point(24, 47);
+            this.chkBoxMaxLength.Location = new System.Drawing.Point(18, 38);
+            this.chkBoxMaxLength.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chkBoxMaxLength.Name = "chkBoxMaxLength";
-            this.chkBoxMaxLength.Size = new System.Drawing.Size(138, 21);
+            this.chkBoxMaxLength.Size = new System.Drawing.Size(106, 17);
             this.chkBoxMaxLength.TabIndex = 3;
             this.chkBoxMaxLength.Text = "Taille maximum : ";
             this.chkBoxMaxLength.UseVisualStyleBackColor = true;
@@ -370,9 +395,10 @@
             // chkBoxAlpha2
             // 
             this.chkBoxAlpha2.AutoSize = true;
-            this.chkBoxAlpha2.Location = new System.Drawing.Point(25, 118);
+            this.chkBoxAlpha2.Location = new System.Drawing.Point(19, 96);
+            this.chkBoxAlpha2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chkBoxAlpha2.Name = "chkBoxAlpha2";
-            this.chkBoxAlpha2.Size = new System.Drawing.Size(97, 21);
+            this.chkBoxAlpha2.Size = new System.Drawing.Size(79, 17);
             this.chkBoxAlpha2.TabIndex = 2;
             this.chkBoxAlpha2.Text = "checkBox3";
             this.chkBoxAlpha2.UseVisualStyleBackColor = true;
@@ -381,9 +407,10 @@
             // 
             this.chkBoxAlpha3.AutoSize = true;
             this.chkBoxAlpha3.Checked = true;
-            this.chkBoxAlpha3.Location = new System.Drawing.Point(25, 145);
+            this.chkBoxAlpha3.Location = new System.Drawing.Point(19, 118);
+            this.chkBoxAlpha3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chkBoxAlpha3.Name = "chkBoxAlpha3";
-            this.chkBoxAlpha3.Size = new System.Drawing.Size(97, 21);
+            this.chkBoxAlpha3.Size = new System.Drawing.Size(79, 17);
             this.chkBoxAlpha3.TabIndex = 1;
             this.chkBoxAlpha3.TabStop = true;
             this.chkBoxAlpha3.Text = "checkBox2";
@@ -392,9 +419,10 @@
             // chkBoxAlpha1
             // 
             this.chkBoxAlpha1.AutoSize = true;
-            this.chkBoxAlpha1.Location = new System.Drawing.Point(25, 91);
+            this.chkBoxAlpha1.Location = new System.Drawing.Point(19, 74);
+            this.chkBoxAlpha1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chkBoxAlpha1.Name = "chkBoxAlpha1";
-            this.chkBoxAlpha1.Size = new System.Drawing.Size(97, 21);
+            this.chkBoxAlpha1.Size = new System.Drawing.Size(79, 17);
             this.chkBoxAlpha1.TabIndex = 0;
             this.chkBoxAlpha1.Text = "checkBox1";
             this.chkBoxAlpha1.UseVisualStyleBackColor = true;
@@ -405,18 +433,21 @@
             this.grpBoxLog.Controls.Add(this.lblLogsPath);
             this.grpBoxLog.Controls.Add(this.tbxLogsPath);
             this.grpBoxLog.Controls.Add(this.chkBoxLogs);
-            this.grpBoxLog.Location = new System.Drawing.Point(799, 285);
+            this.grpBoxLog.Location = new System.Drawing.Point(599, 232);
+            this.grpBoxLog.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpBoxLog.Name = "grpBoxLog";
-            this.grpBoxLog.Size = new System.Drawing.Size(440, 131);
+            this.grpBoxLog.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpBoxLog.Size = new System.Drawing.Size(330, 106);
             this.grpBoxLog.TabIndex = 16;
             this.grpBoxLog.TabStop = false;
             this.grpBoxLog.Text = "Logs";
             // 
             // btnFind
             // 
-            this.btnFind.Location = new System.Drawing.Point(396, 88);
+            this.btnFind.Location = new System.Drawing.Point(297, 72);
+            this.btnFind.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(42, 26);
+            this.btnFind.Size = new System.Drawing.Size(32, 21);
             this.btnFind.TabIndex = 3;
             this.btnFind.Text = "...";
             this.btnFind.UseVisualStyleBackColor = true;
@@ -424,41 +455,46 @@
             // lblLogsPath
             // 
             this.lblLogsPath.AutoSize = true;
-            this.lblLogsPath.Location = new System.Drawing.Point(27, 66);
+            this.lblLogsPath.Location = new System.Drawing.Point(20, 54);
+            this.lblLogsPath.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLogsPath.Name = "lblLogsPath";
-            this.lblLogsPath.Size = new System.Drawing.Size(95, 17);
+            this.lblLogsPath.Size = new System.Drawing.Size(72, 13);
             this.lblLogsPath.TabIndex = 2;
             this.lblLogsPath.Text = "Path of logs : ";
             // 
             // tbxLogsPath
             // 
-            this.tbxLogsPath.Location = new System.Drawing.Point(25, 90);
+            this.tbxLogsPath.Location = new System.Drawing.Point(19, 73);
+            this.tbxLogsPath.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbxLogsPath.Name = "tbxLogsPath";
-            this.tbxLogsPath.Size = new System.Drawing.Size(370, 22);
+            this.tbxLogsPath.Size = new System.Drawing.Size(278, 20);
             this.tbxLogsPath.TabIndex = 1;
             // 
             // chkBoxLogs
             // 
             this.chkBoxLogs.AutoSize = true;
-            this.chkBoxLogs.Location = new System.Drawing.Point(24, 33);
+            this.chkBoxLogs.Location = new System.Drawing.Point(18, 27);
+            this.chkBoxLogs.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chkBoxLogs.Name = "chkBoxLogs";
-            this.chkBoxLogs.Size = new System.Drawing.Size(110, 21);
+            this.chkBoxLogs.Size = new System.Drawing.Size(87, 17);
             this.chkBoxLogs.TabIndex = 0;
             this.chkBoxLogs.Text = "Activate logs";
             this.chkBoxLogs.UseVisualStyleBackColor = true;
             // 
             // tbxWordlistPath
             // 
-            this.tbxWordlistPath.Location = new System.Drawing.Point(21, 22);
+            this.tbxWordlistPath.Location = new System.Drawing.Point(16, 18);
+            this.tbxWordlistPath.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbxWordlistPath.Name = "tbxWordlistPath";
-            this.tbxWordlistPath.Size = new System.Drawing.Size(371, 22);
+            this.tbxWordlistPath.Size = new System.Drawing.Size(279, 20);
             this.tbxWordlistPath.TabIndex = 17;
             // 
             // btnFindWordlist
             // 
-            this.btnFindWordlist.Location = new System.Drawing.Point(393, 19);
+            this.btnFindWordlist.Location = new System.Drawing.Point(295, 15);
+            this.btnFindWordlist.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnFindWordlist.Name = "btnFindWordlist";
-            this.btnFindWordlist.Size = new System.Drawing.Size(42, 26);
+            this.btnFindWordlist.Size = new System.Drawing.Size(32, 21);
             this.btnFindWordlist.TabIndex = 18;
             this.btnFindWordlist.Text = "...";
             this.btnFindWordlist.UseVisualStyleBackColor = true;
@@ -467,18 +503,20 @@
             // 
             this.grpWordList.Controls.Add(this.btnFindWordlist);
             this.grpWordList.Controls.Add(this.tbxWordlistPath);
-            this.grpWordList.Location = new System.Drawing.Point(802, 427);
+            this.grpWordList.Location = new System.Drawing.Point(602, 347);
+            this.grpWordList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpWordList.Name = "grpWordList";
-            this.grpWordList.Size = new System.Drawing.Size(436, 63);
+            this.grpWordList.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpWordList.Size = new System.Drawing.Size(327, 51);
             this.grpWordList.TabIndex = 19;
             this.grpWordList.TabStop = false;
             this.grpWordList.Text = "Wordlist settings";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 503);
+            this.ClientSize = new System.Drawing.Size(584, 411);
             this.Controls.Add(this.grpWordList);
             this.Controls.Add(this.grpBoxLog);
             this.Controls.Add(this.grpSettings);
@@ -494,6 +532,7 @@
             this.Controls.Add(this.menuStrip2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "GCracker";

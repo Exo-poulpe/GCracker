@@ -1,0 +1,5 @@
+- probleme quand on fait stop puis que l'on relance l'attaque la deuxieme fenetre ne souvre pas
+- probleme de vitesse
+- les valeurs par defaut forcement ZIP
+- faire le systeme de logs
+- faire la pragress bar pour la wordlist
